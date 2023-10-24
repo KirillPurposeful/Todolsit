@@ -9,9 +9,17 @@ function App() {
     {id:'eqweeq2', title:'Shrek',isDone: true},
 
   ])
+
+  function removeTask(id:string) {
+    let filteredTasks = tasks.filter((t)=>
+   t.id !== id
+    )
+    setTasks(filteredTasks);
+  }
+
   return (
     <div className="App">
-    <Todolist tasks={tasks} title={'What to learn'} />
+    <Todolist tasks={tasks} title={'What to learn'} removeTask={removeTask} />
     </div>
   );
 }
